@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+  
+
+    <link rel="stylesheet" href="comingsoon.css" />
+    <!-- Add any necessary CSS styles here -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu">
+        <ul id="list">
+            <li><a href="profile.html" data-id="">Profile</a></li>
+       
+      <hr />
+          <li><a href="comingsoon.html" onclick="displayComingSoon()">Posts</a></li>
+          <hr />
+          <li><a href="comingsoon.html" onclick="displayComingSoon()">Gallery</a></li>
+          <hr />
+          <li><a href="comingsoon.html" onclick="displayComingSoon()">ToDo</a></li>
+        </ul>
+      </div>
+    <div class="profile-container">
+      <!-- Display the user profile information here -->
+    </div>
+  
+ 
+    <script src="comingsoon.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const listItems = document.querySelectorAll("#list li");
+    
+          listItems.forEach(function (item) {
+            item.addEventListener("click", function (event) {
+              event.preventDefault();
+              const link = item.querySelector("a").getAttribute("href");
+    
+              if (link === "comingsoon.html") {
+                // If the link is "comingsoon.html," display "Coming soon" in the profile container
+                displayComingSoon();
+              } else {
+                // For other links, navigate to the specified URL
+                window.location.href = link;
+              }
+    
+              // Set the "active" class for the clicked list item
+              listItems.forEach(function (li) {
+                li.classList.remove("active");
+              });
+              item.classList.add("active");
+            });
+          });
+    
+          // Check if there's a last clicked id in localStorage and set the corresponding list item as active
+          const lastClickedId = localStorage.getItem("lastClickedId");
+          console.log(lastClickedId, "lastClickedId in coming---");
+          if (lastClickedId) {
+            const activeListItem = document.querySelector(
+              `#list li a[data-id="${lastClickedId}"]`
+            );
+            if (activeListItem) {
+              activeListItem.parentElement.classList.add("active");
+            }
+          }
+    
+          const profileLink = document.querySelector("#list li a[href='profile.html']");
+          if (profileLink) {
+            profileLink.setAttribute("data-id", lastClickedId || "");
+          }
+        });
+    
+        // function displayComingSoon() {
+        //   const profileContainer = document.querySelector(".profile-container");
+        //   profileContainer.innerHTML = `<h1>Coming soon</h1>`;
+        // }
+      </script>
+  
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="profile.css" />
+    <!-- Add any necessary CSS styles here -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu">
+        <ul id="list">
+         
+          <li class="active"><a href="">Profile</a></li>
+       
+        <hr />
+        <li><a href="comingsoon.html" onclick="displayComingSoon('Posts')">Posts</a></li>
+        <hr />
+        <li><a href="comingsoon.html" onclick="displayComingSoon('Gallery')">Gallery</a></li>
+        <hr />
+        <li><a href="comingsoon.html" onclick="displayComingSoon('ToDo')">ToDo</a></li>
+      </ul>
+      </div>
+    <div class="profile-container">
+      <!-- Display the user profile information here -->
+    </div>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="profile.js"></script>
+ 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+
+        const listItems = document.querySelectorAll("#list li");
+
+        listItems.forEach(function (item) {
+            item.addEventListener("click", function (event) {
+              event.preventDefault();
+              const link = item.querySelector("a").getAttribute("href");
+              const urlParams = new URLSearchParams(window.location.search);
+  const userId = urlParams.get("id");
+  console.log(userId,"userIdmin 70------")
+             
+            localStorage.setItem("lastClickedId", userId);
+              // console.log(window.location.href,"in profile html====")
+              // localStorage.setItem("lastClickedId",  id);
+              if (link === "comingsoon.html") {
+                // If the link is "comingsoon.html," display "Coming soon" in the profile container
+                displayComingSoon();
+              } else {
+                // For other links, navigate to the specified URL
+                window.location.href = link;
+              }
+    
+              // Set the "active" class for the clicked list item
+              listItems.forEach(function (li) {
+                li.classList.remove("active");
+              });
+            
+              item.classList.add("active");
+            });
+          });
+        // listItems.forEach(function (item) {
+        //   item.addEventListener("click", function (event) {
+        //     event.preventDefault();
+        //     const link = item.querySelector("a").getAttribute("href");
+        //     const id = item.querySelector("a").getAttribute("data-id");
+        //     window.location.href = `${link}?id=${id}`;
+
+        //     listItems.forEach(function (li) {
+        //       li.classList.remove("active");
+        //     });
+
+        //     // Add the "active" class to the clicked list item
+        //     item.classList.add("active");
+        //   });
+        // });
+  const urlParams = new URLSearchParams(window.location.search);
+  const userId = urlParams.get("id");
+        let lastClickedId = userId//localStorage.getItem("lastClickedId");
+        console.log(lastClickedId, "lastClickedId in 108---");
+        if (lastClickedId) {
+          const activeListItem = document.querySelector(
+            `#list li a[data-id="${lastClickedId}"]`
+          );
+          if (activeListItem) {
+            activeListItem.parentElement.classList.add("active");
+          }
+        }
+
+        const profileLink = document.querySelector("#list li a");
+        if (profileLink) {
+          profileLink.href = `/profile.html?id=${lastClickedId || "1"}`;
+        }
+      });
+
+      function makeActive(element) {
+        const listItems = document.querySelectorAll("#list li");
+        listItems.forEach(function (li) {
+          li.classList.remove("active");
+        });
+        element.classList.add("active");
+      }
+
+      function removeDefaultStyles(event) {
+        event.preventDefault();
+      }
+      // function displayComingSoon() {
+      //     const profileContainer = document.querySelector(".profile-container");
+      //     profileContainer.innerHTML = `<h1>Coming soon</h1>`;
+      //   }
+    </script>
+  </body>
+</html>
+   
+  
+  </body>
+</html> 

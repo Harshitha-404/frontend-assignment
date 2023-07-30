@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap");
+
+/* Example CSS for responsive layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-family: "PT Sans", sans-serif;
+  /* margin: 0;
+  padding: 0; */
+  background-color: #f9f9f9;
+}
+hr {
+  color: gainsboro;
+}
+.profile-container {
+  margin-left: 100px;
+}
+.img {
+  border-radius: 50%;
+  margin-top: 20px;
+}
+.name {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+}
+.names {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+}
+.col {
+  color: grey;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+.value {
+  margin-left: 10px;
+  font-weight: bold;
+}
+.content {
+  /* margin-left: 50px; */
+  max-width: 370px;
+}
+.vl {
+  border-left: 1px solid rgb(175, 173, 173);
+
+  height: 600px;
+  position: absolute;
+  /* left: 55%; */
+  left: 60%;
+  margin-left: -3px;
+  margin-top: 150px;
+  top: 0;
+}
+
+.vl-content {
+  margin-left: 150px;
+}
+
+#map {
+  margin-top: 20px;
+  margin-left: 40px;
+  height: 350px;
+  width: 150%;
+  border-radius: 30px;
+}
+
+/* body,
+html {
+  height: 100%;
+  margin: 0;
+} */
+
+.container {
+  height: 100%;
+  display: flex;
+}
+
+.menu {
+  background-color: #583ac3;
+  padding: 20px;
+  color: rgba(207, 203, 203, 0.69);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  height: 650px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+}
+
+.menu li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.top {
+  width: 60em;
+}
+li.active {
+  color: white;
+}
+#list li.active {
+  /* // background-color: #007bff; */
+  color: #fff;
+}
+#list li.active {
+  color: white;
+}
+
+/* Remove underline and default link color for all anchor tags inside #list */
+#list a {
+  text-decoration: none;
+  color: inherit; /* Use the parent's color to ensure consistency */
+}
+
+/* Style visited links (optional) */
+#list a:visited {
+  color: inherit; /* Use the parent's color to ensure consistency for visited links */
+}
+.coming-soon {
+  /* background-color: white; */
+  text-align: center;
+  padding: 20px;
+}
+
+.coming-soon h1 {
+  margin-top: 200px;
+  font-size: 100px;
+  color: #dedddd;
+}
+/* .profile-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.menu {
+  width: 200px;
+  margin: 1000 auto;
+}
+
+/* Remove default list styles for the ul element in the header 
+header ul {
+  margin-left: 500px;
+  padding: 0;
+  list-style: none;
+} */

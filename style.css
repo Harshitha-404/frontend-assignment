@@ -1,0 +1,208 @@
+/* General styling for the landing page */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap");
+* {
+  margin: 0; /* Remove margin for the body */
+  padding: 0; /* Remove padding for the body */
+}
+body.index-body {
+  position: relative;
+  background: linear-gradient(
+        to bottom right,
+        #a00f0f,
+        transparent 49.8%,
+        transparent 50.2%,
+        #560505
+      )
+      0 0/100% 100%,
+    linear-gradient(
+        to bottom left,
+        #e97777,
+        transparent 49.8%,
+        transparent 50.2%,
+        #231111
+      )
+      100% 100%/100% 100%;
+}
+body {
+  font-family: "Barlow", sans-serif;
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* .landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+} */
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Styling for the user account cards */
+/* .account-card {
+  width: 600px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  transition: transform 0.2s ease-in-out;
+} */
+
+/* .account-card:hover {
+  transform: scale(1.02);
+} */
+
+/* .card-img-top {
+  /* width: 10%;
+  height: 30px; */
+/* display: block; 
+  margin-top: 40px; */
+/* object-fit: cover;
+  border-radius: 50%; 
+} */
+.cd-img {
+  border-radius: 50%;
+}
+
+/* .card-body {
+  padding: 10px;
+} */
+
+/* .card-title {
+  font-size: 18px;
+  /* font-weight: bold;
+  margin-left: 40px;
+  /* padding-bottom: 20px; 
+  color: #333;
+} */
+
+/* .card-text {
+  font-size: 14px;
+  color: #666;
+} */
+
+/* Styling for the profile page */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-page h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Add any additional custom styles here */
+
+/* .account-list {
+  /* list-style: none;
+  margin: 0;
+  padding: 0; 
+list-style: none;
+margin: 0;
+padding: 0;
+overflow-y: auto;  Set vertical scroll
+max-height: 400px;  Limit the height to 600px, and add scroll when the content exceeds 
+} */
+
+/* .account-list li {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+} */
+
+.account-list li:hover {
+  background-color: #eee;
+}
+
+.account-name {
+  flex: 1;
+}
+
+.account-action {
+  text-align: right;
+}
+
+.account-list-container {
+  max-height: 400px; /* Limit the height to 400px and add scroll when the content exceeds */
+  overflow-y: auto; /* Set vertical scroll */
+}
+
+.account-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 400px; /* Limit the height to 400px and add scroll when the content exceeds */
+  overflow-y: auto;
+  width: 500px; /* Set a fixed width for the list items*/
+}
+
+.account-list li {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  /* width: 300px; Remove the width from here */
+}
+.title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.container {
+  flex: 1;
+  max-height: 100%;
+  overflow-y: auto; /* Enable vertical scroll when content exceeds available height */
+  border-radius: 30px; /* Add rounded corners to create a card-like appearance */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the card */
+  background-color: #fff; /* Add a background color to the card */
+  padding: 20px; /* Add some padding to the card */
+  background-image: linear-gradient(#ddd, #f9f9f9 30%);
+}
+.st-half {
+  background-color: #e6e2e2; /* Set the title color to grey */
+}
+
+/* body {
+  background-color: #583ac3; /* Replace #f0f0f0 with your desired background color 
+  min-height: 20vh; /* Adjust this value to set the height of the colored area 
+} */
+
+body {
+  background-color: #583ac3;
+}
+/* Your CSS styles go here */
+/* Your CSS styles go here */
+
+/* Styling the content container */
+.content {
+  position: relative;
+  padding: 20px;
+}
+
+/* Styling the vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 1px; /* Set the width to 1px for a thin line */
+  height: auto; /* Adjust the height based on the content */
+  border-left: 1px solid green; /* Create a thin vertical line */
+}
+
+/* Styling the content on the right */
+.content-right {
+  padding-left: 10px; /* Adjust padding to create space between the line and content */
+}
